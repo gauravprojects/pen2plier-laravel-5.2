@@ -32,7 +32,32 @@ Route::post('/contact/store',array(
 ));
 
 
+Route::get('/contact/results',array(
+    'uses' => 'contactController@display',
+    'as'   => 'contact_display'
+));
 
+Route::get('/login', array(
+    'uses'=> 'accountController@index',
+    'as'  => 'login_home'
+));
+
+Route::post('/login',array(
+    'uses' => 'accountController@login',
+    'as'   => 'login'
+));
+
+
+Route::get('/logout',array(
+    'uses' => 'accountController@logout',
+    'as'   => 'logout'
+));
+
+
+Route::get('/admin',array(
+    'uses' => 'adminController@index',
+    'as'   => 'admin'
+));
 
 
 ?>

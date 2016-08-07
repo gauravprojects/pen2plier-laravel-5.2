@@ -11,4 +11,11 @@ class contact extends Model
         return DB::table('contact_us')
             ->insert($input_array);
     }
+
+    public static function display()
+    {
+        return DB::table('contact_us')
+            ->select()
+            ->get();
+    }
 }
